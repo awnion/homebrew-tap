@@ -5,15 +5,18 @@ on:
 
 jobs:
   test:
-    strategy:
-      matrix:
-        os: [macos-13, macos-14]
     runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-12
+          - macos-13
+          - macos-14
+          - macos-15
+          - macos-16
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
     - name: Install Formula
       run: brew install awnion/tap/boost@1.83
 
