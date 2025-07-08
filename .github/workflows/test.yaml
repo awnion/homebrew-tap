@@ -10,11 +10,10 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-12
           - macos-13
           - macos-14
           - macos-15
-          - macos-16
+          - macos-latest
 
     steps:
     - name: Install Formula
