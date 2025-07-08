@@ -18,7 +18,9 @@ jobs:
 
     steps:
     - name: Install Formula
-      run: brew install awnion/tap/boost@1.83
+      run: |
+        brew install awnion/tap/boost@1.83
+        brew link --force --overwrite awnion/tap/boost@1.83
 
     - name: Test Formula
       run: |
