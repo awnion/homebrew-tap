@@ -11,7 +11,14 @@ class BoostAT183 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/awnion/tap"
-    sha256 arm64_sequoia: "69f914f57e6243bc15d81718934b03cb195327643b8b53f1c3758b5d22507e87"
+    sha256 cellar: :any,                 arm64_sequoia:  "69f914f57e6243bc15d81718934b03cb195327643b8b53f1c3758b5d22507e87"
+    sha256 cellar: :any,                 arm64_sonoma:   "6b756f347001abeab4d06117f818d6c786c69b43f1169807af626bce7357ccb1"
+    sha256 cellar: :any,                 arm64_ventura:  "b0d919557c04b0141596b9936e231eefeb5b80ea0e9cefeb40cbe1937404fb60"
+    sha256 cellar: :any,                 arm64_monterey: "a38751ff7e50f5e9b340ea6028f6c7f1ac80e131e261c108394b7f7c53fbd3c1"
+    sha256 cellar: :any,                 sonoma:         "16f3b4ef9fc39f10c000061ff2817843cd44d41722c7bf5a8e72c5293d73d771"
+    sha256 cellar: :any,                 ventura:        "61da54543473024c5d585d9f5dd8d725db5c08646bd94d2c034d2f505b69345a"
+    sha256 cellar: :any,                 monterey:       "b954ded2e6de1c7c2d91f0abf566fdb8ac0352d094f9a0517f1047f227b4152a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17ebadc40acbb098b0401925c791c0e26584c23953cbf164137d9664fdd8df63"
   end
 
   depends_on "icu4c"
