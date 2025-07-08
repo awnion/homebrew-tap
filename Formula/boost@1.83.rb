@@ -10,10 +10,9 @@ class BoostAT183 < Formula
   keg_only :versioned_formula
 
   bottle do
-    root_url "https://ghcr.io/v2/awnion/homebrew-tap"
-    sha256                arm64_sonoma:    "a815accc0c0a7261a51947b3f488a10e58759c871901544c5c1b74d10336546f"
-    sha256                arm64_sequoia:   "2593f7fa7e7bfd8129481b3a1fac69371191ceeba54d7d1d37c87e8e1f01d113"
-    sha256 cellar: :any,  ventura:         "aa74fe38570e4f337dba4d6aecf30ba132bd02bd0a5c248e9e5d83bc8753bcc6"
+    root_url "https://ghcr.io/v2/awnion/tap"
+    rebuild 1
+    sha256 arm64_sequoia: "69f914f57e6243bc15d81718934b03cb195327643b8b53f1c3758b5d22507e87"
   end
 
   depends_on "icu4c"
