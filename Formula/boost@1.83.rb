@@ -11,7 +11,6 @@ class BoostAT183 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/awnion/tap"
-    rebuild 1
     sha256 arm64_sequoia: "69f914f57e6243bc15d81718934b03cb195327643b8b53f1c3758b5d22507e87"
   end
 
