@@ -1,0 +1,24 @@
+name: Test font-afio
+
+on:
+  push:
+    paths: [Casks/font-afio.rb]
+  pull_request:
+    paths: [Casks/font-afio.rb]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Install cask
+        run: brew install --cask awnion/tap/font-afio
+
+      - name: Verify fonts installed
+        run: |
+          COUNT=$(ls "$HOME/Library/Fonts"/afio-*.ttf 2>/dev/null | wc -l)
+          if [ "$COUNT" -eq 0 ]; then
+            echo "::error::No afio fonts found in ~/Library/Fonts/"
+            exit 1
+          fi
+          echo "Installed ${COUNT} font(s)"
+          ls "$HOME/Library/Fonts"/afio-*.ttf
