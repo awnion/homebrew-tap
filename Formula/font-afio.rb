@@ -7,7 +7,11 @@ class FontAfio < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   def install
-    (share/"fonts/afio").install Dir["*.ttf"]
+    if OS.mac?
+      (share/"fonts/afio").install Dir["*.ttf"]
+    else
+      (share/"fonts/afio").install Dir["*.ttf"]
+    end
   end
 
   def post_install
@@ -15,10 +19,15 @@ class FontAfio < Formula
       user_fonts = Pathname.new("#{ENV["HOME"]}/Library/Fonts")
       user_fonts.mkpath
       (share/"fonts/afio").each_child do |font|
-        target = user_fonts/font.basename
-        target.unlink if target.exist?
-        FileUtils.cp(font, target)
+        FileUtils.ln_sf(font, user_fonts/font.basename)
       end
+    else
+      user_fonts = Pathname.new("#{ENV["HOME"]}/.local/share/fonts")
+      user_fonts.mkpath
+      (share/"fonts/afio").each_child do |font|
+        FileUtils.ln_sf(font, user_fonts/font.basename)
+      end
+      system "fc-cache", "-fv", user_fonts if which("fc-cache")
     end
   end
 
