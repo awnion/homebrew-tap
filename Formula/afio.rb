@@ -3,7 +3,7 @@ class Afio < Formula
   homepage "https://github.com/awnion/custom-iosevka-nerd-font"
   version "0.0.17"
   url "https://github.com/awnion/custom-iosevka-nerd-font/releases/download/v#{version}/afio-#{version}.zip"
-  sha256 "PLACEHOLDER"
+  sha256 "849f903fd1e3efce22644587043588d3142b6002ca2b580281ac3eb628bad746"
   license any_of: ["MIT", "Apache-2.0"]
 
   def install
